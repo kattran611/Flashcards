@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
+  mount_devise_token_auth_for 'User', at: 'api/auth'
   namespace :api do
-    resources :cards, only: [:show, :index, :update, :create, :destroy]
-    mount_devise_token_auth_for 'User', at: 'api/auth'
+    resources :cards, only: [:index, :update, :create, :destroy]
+
   end
 
 
